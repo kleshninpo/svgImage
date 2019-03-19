@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="range.css">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input class='urlInput' type="text" placeholder="Введите url картинки">
+    <button class='btn' type="submit">ok</button>
+</form>
+
+<div class="range-container">
+    <input type="range" min="1" max="3" step="0.01" value="1">
+    <ul class="range">
+        <li>x1</li>
+        <li>x1.5</li>
+        <li>x2</li>
+        <li>x2.5</li>
+        <li>x3</li>
+    </ul>
+</div>
+<svg width="584" height="584"
+     version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewport-fill="white">
+
+    <style> .draggable { cursor: move } </style>
+    <defs>
+        <clipPath id="image-clip-path">
+            <rect x="150" y="150" width="228" height="228"/>
+        </clipPath>
+    </defs>
+
+    <image clip-path="url(#image-clip-path)"
+           id="image"
+           class="draggable"
+           x="150" y="150"
+           width="228" height="228"
+           xlink:href="https://s3.eu-central-1.amazonaws.com/periodica-main/public/photo_dpi72.jpg"
+           preserveAspectRatio="xMidYMid slice"/>
+</svg>
+<p class="preloader">Загрузка...</p>
+
+<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
