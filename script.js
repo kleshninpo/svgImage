@@ -160,6 +160,7 @@ range.oninput = zoom;
 
 // отслеживаем клик по картинке
 img.onmousedown = e => {
+  e.preventDefault();
   // круг вокруг зажатого курсора
   let mouseCircle = document.createElement('div');
   mouseCircle.id = 'mouseCircle';
@@ -180,7 +181,7 @@ img.onmousedown = e => {
 
   // отслеживаем движение зажатой мыши
   document.onmousemove = e => moveAt(e);
-
+  e.preventDefault();
   // отслеживаем момент, когда пользователь отпускает кнопку
   document.onmouseup = () => {
     // при onmouseup меняем курсор на обычный
@@ -195,6 +196,7 @@ img.onmousedown = e => {
 
   // сама функция drug'n'drop
   function moveAt(e) {
+    e.preventDefault();
     // с помощью функции zoom, чтобы не дублировать код, сохраняем текущее положение картинки
     if (localStorage.length > 0) zoom();
 
